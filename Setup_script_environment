@@ -1,0 +1,38 @@
+#!/bin/bash
+
+###################################################################################################
+# Name of the script : Setup_script_environment.sh
+# Date               : last update 13/Jan/2020
+# Written by Uktae Kim of IBM Korea Technical Solutions
+#
+# This script prepare system environment to use the script "Linux_system_check.sh"
+# This script simply create and copy some directories, files. so there are no affect to system.
+# There are two versions (Light, Full), It needs to adjust for them.
+#
+# Change History :
+# 10/Jan/2020 - First created
+# 10/Feb/2020 - Add note : Two Versions.
+###################################################################################################
+
+
+## Environment Variables
+CHKID=`id | grep root | wc -l`
+
+
+## begin
+
+if [ $CHKID -eq 0 ]; then
+  echo
+  echo "You must login as root... Try again."
+  echo
+  exit
+fi
+
+mkdir /IBM_System_check
+mkdir /IBM_System_check/Resource
+mkdir /IBM_System_check/Result
+cp ./Linux_System_check_IBM.sh /IBM_System_check/Linux_System_check_IBM.sh
+chmod 700 /IBM_System_check/Linux_System_check_IBM.sh
+
+echo -e "\nSetting Environment for System check script is done."
+echo -e "Please Check "/IBM_System_check" Directory.\n"
