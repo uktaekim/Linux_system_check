@@ -31,7 +31,7 @@ fi
 mkdir /IBM_System_check
 mkdir /IBM_System_check/Resource
 mkdir /IBM_System_check/Result
-cp ./Linux_System_check_IBM.sh /IBM_System_check/Linux_System_check_IBM.sh
+mv ./Linux_System_check_IBM.sh /IBM_System_check/Linux_System_check_IBM.sh
 chmod 700 /IBM_System_check/Linux_System_check_IBM.sh
 
 echo -e "\nSetting Environment for System check script is done."
