@@ -2,7 +2,7 @@
 
 ###################################################################################################
 # Name of the script : Setup_script_environment.sh
-# Date               : last update 13/Jan/2020
+# Date               : last update 11/Feb/2020
 # Written by Uktae Kim of IBM Korea Technical Solutions
 #
 # This script prepare system environment to use the script "Linux_system_check.sh"
@@ -11,7 +11,7 @@
 #
 # Change History :
 # 10/Jan/2020 - First created
-# 10/Feb/2020 - Add note : Two Versions.
+# 11/Feb/2020 - Add note : Two Versions.
 ###################################################################################################
 
 
