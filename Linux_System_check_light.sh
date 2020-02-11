@@ -22,6 +22,7 @@
 #################################################################################################
 
 
+
 ########## Environment Variables ##########
 
 export LANG=C
@@ -51,8 +52,23 @@ if [ $CHKID -eq 0 ]; then
 fi
 
 
-########## Begin executing Script ##########
+########### IBM_System_check directory create once ##########
+# This part prepares system environment to use the script "Linux_system_check.sh"
+# This part simply creates and copy some directories, files. so there are no affect to system.
+# There are two versions (Light, Full), It needs to adjust for them.
 
+if [ `ls -artl / | grep -w IBM_System_check | wc -l` -eq 1 ] ; then
+  echo -e "\n"
+else
+  mkdir -p /IBM_System_check
+  mkdir -p /IBM_System_check/Resource
+  mkdir -p /IBM_System_check/Result
+  mv ./Linux_System_check_IBM.sh /IBM_System_check/Linux_System_check_IBM.sh
+  chmod 700 /IBM_System_check/Linux_System_check_IBM.sh
+fi
+
+
+########## Begin executing Script ##########
 clear
 echo -e "\nBegining The script : $SCRIPTNAME"
 echo -e "It may take several minutes..\n"
@@ -669,9 +685,11 @@ fi
 echo -e "\n" &>> $tmp_file
 
 
-
 ########## DONE ##########
 
-sleep 1
 echo -e "\nCollecting date is done.\n"
-echo -e "The log have been saved to the following path:'/IBM_System_Check/Result'\n"
+echo -e "\nATTENTION!"
+echo -e "The script file 'IBM_System_check.sh' was moved to /IBM_System_check."
+echo -e "When you execute this script later, please enter the /IBM_System_check Directory\n."
+echo -e "The Installed script's home directory is '/IBM_System_check'." 
+echo -e "The Collected log have been saved to the following path:'/IBM_System_Check/Result'\n"
