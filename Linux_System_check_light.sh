@@ -470,7 +470,7 @@ if [ -d /proc/net/bonding ]; then
   IFS=$'\n' ARR=(`ls -artl /etc/sysconfig/network-scripts |grep bond | awk -F 'g-' '{print $2}'`)
   for VALUE in "${ARR[@]}"; do echo "<---- $VALUE ---->"; done &>> /dev/null
   ls -artl /etc/sysconfig/network-scripts |grep bond | awk -F 'g-' '{print $2}' &>> /dev/null
-  for value in "${ARR[@]}"; do cat /proc/net/bonding/$value; done | egrep "enp|Status|Speed|Duplex|Bond" &&>> $tmp_file
+  for value in "${ARR[@]}"; do cat /proc/net/bonding/$value; done | egrep "enp|Status|Speed|Duplex|Bond" &>> $tmp_file
 else
   echo "Bonding isn't configured.." &>> $tmp_file
 fi
