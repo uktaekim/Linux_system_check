@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ################################################################################################
-# Name of the script : Linux_System_check_light.sh
-# Date               : last update 11/Feb/2020
-# Version 			 : v1.2
+# Name of the script : Linux_System_check_IBM.sh
+# Date               : last update 13/Jan/2020
+# Version 			 : v1.1
 #
 # Written by Uktae Kim of IBM Korea Technical Solutions
 #
@@ -15,12 +15,9 @@
 # If you don't install the packages, it won't execute some commands.
 #
 # Change History :
-# 10/Jan/2020 - v1.0 First created
+# 10/Jan/2020 - v1.0 First created for HANHWA
 # 07/Feb/2020 - v1.1 Compatibility, Functional enhancement
-# 11/Feb/2020 - v1.2 Devided to 2 versions, Full version, Light version. / Functional enhancement.
-#
 #################################################################################################
-
 
 
 ########## Environment Variables ##########
@@ -55,7 +52,6 @@ fi
 ########### IBM_System_check directory create once ##########
 # This part prepares system environment to use the script "Linux_system_check.sh"
 # This part simply creates and copy some directories, files. so there are no affect to system.
-# There are two versions (Light, Full), It needs to adjust for them.
 
 if [ `ls -artl / | grep -w IBM_System_check | wc -l` -eq 1 ] ; then
   echo -e "\n"
