@@ -154,10 +154,10 @@ cat /proc/meminfo | grep -i "HardwareCorrupted" &>> $tmp_file
 echo -e "\n" &>> $tmp_file
 
 echo "== MEMORY dmidecode CHANGES ==" &>> $tmp_file
-dmidecode -t memory | egrep "Installed|Enabled" &>> /IBM_System_check/Resource/$CHKDATE_NOW/dmidecode_mem
+dmidecode -t memory | grep "Size" &>> /IBM_System_check/Resource/$CHKDATE_NOW/dmidecode_mem
 diff /IBM_System_check/Resource/$CHKDATE_BEFORE/dmidecode_mem /IBM_System_check/Resource/$CHKDATE_NOW/dmidecode_mem &>> $tmp_file
 echo -e "\n" &>> $tmp_file
-
+# some server's SMBIOS version is different. for instance, SMBIOS 2.5, 2.8. check difference when make script.
 
 ########## BOOTING CONFIGURATION ##########
 
