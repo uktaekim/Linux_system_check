@@ -1,0 +1,2 @@
+https://access.redhat.com/solutions/528683
+hba port status check
